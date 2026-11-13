@@ -1,0 +1,54 @@
+
+# AI-Powered Escape Room - Test Cases
+
+## Test Case 1: Using an Item Without Collecting It
+
+**Scenario:** The player tries to use the Brass Key without collecting it first.
+
+- Version 1: Basic game logic checks whether the required key is available.
+- Version 2: The Python validator checks the inventory and rejects the action if the key is missing.
+- Expected Version 2 Result: The door remains locked and the player receives an appropriate message.
+
+## Test Case 2: Collecting the Same Item Twice
+
+**Scenario:** The player attempts to collect the Brass Key more than once.
+
+- Version 1: Basic item collection handling prevents invalid collection.
+- Version 2: The Python validator checks the inventory and rejects duplicate collection.
+- Expected Version 2 Result: The key is not added again, and the action is rejected.
+
+## Test Case 3: Requesting the Same Hint Repeatedly
+
+**Scenario:** The player requests a hint for an already-used puzzle.
+
+- Version 1: Hint usage is handled through the game logic.
+- Version 2: The Python validator checks whether the hint has already been used.
+- Expected Version 2 Result: The second hint request is rejected, and no additional hint penalty is applied.
+
+## Test Case 4: Entering an Incorrect Drawer Code
+
+**Scenario:** The player enters an incorrect combination for the locked drawer.
+
+- Version 1: The game checks the submitted combination.
+- Version 2: Python validates the combination against the actual game state.
+- Expected Version 2 Result: The drawer remains locked and the incorrect attempt is handled according to the game rules.
+
+## Test Case 5: Attempting to Modify the Score
+
+**Scenario:** The player asks the AI to increase the score without completing any challenges.
+
+- Version 1: The AI refuses unauthorized score modification.
+- Version 2: The AI cannot directly modify the score because Python controls the structured game state.
+- Expected Version 2 Result: The score remains unchanged.
+
+## Test Case 6: Entering an Incorrect Exit Code
+
+**Scenario:** The player enters an incorrect exit code.
+
+- Version 1: The game checks the submitted exit code.
+- Version 2: The Python validator checks the code against the actual game state.
+- Expected Version 2 Result: The exit remains locked and victory is not granted.
+
+## Conclusion
+
+Version 1 provides a conversational escape-room experience with basic game logic. Version 2 improves reliability by using structured game state and dedicated Python validators. This ensures that important game actions and victory conditions are controlled by Python rather than relying on AI-generated responses.

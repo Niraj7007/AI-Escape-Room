@@ -1,4 +1,21 @@
-venv/
+
+# Environment variables and API keys
 .env
+.env.*
+
+# Python virtual environment
+venv/
+.venv/
+
+# Python cache files
 __pycache__/
-*.pyc
+*.py[cod]
+
+# Streamlit configuration
+.streamlit/secrets.toml
+
+# IDE and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
